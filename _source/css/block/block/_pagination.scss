@@ -1,0 +1,46 @@
+.pagination {
+    @include m-tablet(){
+        display: flex;
+    }
+    &__list{
+        list-style: none;
+        padding: 0;
+        margin: 30px 0 0;
+        display: flex;
+        justify-content: center;
+        li{
+            &:not(:last-child){
+                margin-right: 2px;
+            }
+            &:hover,
+            &.active{
+                .pagination{
+                    &__link{
+                        background-color: $color_dark-red;
+                    }
+                }
+            }
+        }
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: rgba($color: #fff, $alpha: .1);
+        color: $color_text;
+    }
+    &__more{
+        max-width: 310px;
+        margin: 30px auto 0;
+        // display: none;
+        @include m-tablet(){
+            margin-right: 0;
+        }
+        .button{
+            min-width: 200px;
+            width: 100%;
+        }
+    }
+}

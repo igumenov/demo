@@ -1,0 +1,80 @@
+
+@mixin center() {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    margin: auto;
+}
+
+@mixin clearfix() {
+    &:before,
+        &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin flex-item($items, $mr) {
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin-right: #{$mr};
+    margin-bottom: #{$mr};
+    flex-basis: calc(100% / #{$items} - (#{$mr} * (#{$items} - 1)) / #{$items});
+    max-width: calc(100% / #{$items} - (#{$mr} * (#{$items} - 1)) / #{$items});
+    &:nth-child(#{$items + 1}n) {
+        margin-right: #{$mr};
+    }
+    &:nth-child(#{$items}n) {
+        margin-right: 0;
+    }
+}
+
+
+@mixin picture($padding-top, $object-fit) {
+    padding-top: $padding-top * 1%;
+    overflow: hidden;
+    position: relative;
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: $object-fit;
+    }
+}
+
+
+@mixin m-laptop(){
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+@mixin m-tablet-wide(){
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin m-tablet(){
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+@mixin m-phone-wide(){
+    @media (min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin m-custom($maw){
+    @media (min-width: $maw) {
+        @content;
+    }
+}

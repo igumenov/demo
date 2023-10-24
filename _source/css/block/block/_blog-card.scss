@@ -1,0 +1,67 @@
+.blog-card {
+    display: block;
+    max-width: 407px;
+    &:hover{
+        .blog-card{
+            &__title{
+                color: $color_orange
+            }
+        }
+    }
+    &__image {
+    }
+    &__image-wrap {
+        @include picture(57.4,cover);
+        img{
+            transition: $trsn;
+        }
+        &:hover{
+            img{
+                transform: scale(1.05);
+            }
+        }
+    }
+    &__content {
+        padding: 20px 0;
+    }
+    &__title {
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        transition: $trsn;
+        font-size: 22px;
+        @include m-phone-wide(){
+            font-size: 18px;
+        }
+        @include m-tablet(){
+            font-size: 22px;
+        }
+        @include m-tablet-wide(){
+            font-size: 18px;
+        }
+        @include m-laptop(){
+            font-size: 22px;
+        }
+    }
+    &__date {
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        opacity: 0.7;
+    }
+    &__text {
+        line-height: 1.7;
+        margin-top: 10px;
+        font-size: 13px;
+        @include m-tablet(){
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        @include m-tablet-wide(){
+            // font-size: 18px;
+        }
+        @include m-laptop(){
+            font-size: 16px;
+        }
+    }
+}

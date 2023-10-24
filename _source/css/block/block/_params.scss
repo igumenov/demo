@@ -1,0 +1,108 @@
+.params {
+    &__list {
+        margin: 20px -15px;
+        padding: 0 15px;
+        background-color: rgba($color: #101010, $alpha: .9);
+        @include m-tablet(){
+            margin: 40px 0px;
+            padding: 0;
+            background: none;
+        }
+        @include m-tablet-wide(){
+            margin: 60px 0;
+            margin-left: -20px;
+            display: flex;
+            align-items: stretch;
+        }
+    }
+    &__column {
+        padding: 20px 0;
+        @include m-tablet(){
+            padding: 20px 15px;
+            background-color: rgba($color: #101010, $alpha: .9);
+        }
+        @include m-tablet-wide(){
+            flex: 0 0 calc(33.3333% - 20px);
+            margin-left: 20px;
+        }
+        &:not(:last-child){
+            border-bottom: 2px solid #262626;
+            @include m-tablet-wide(){
+                border: none;
+            }
+        }
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        color: $color_orange;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        @include m-tablet(){
+            font-size: 20px;
+        }
+        &_wrap{
+            flex-wrap: wrap;
+        }
+        img{
+            margin-right: 15px;
+            width: 25px;
+            height: 25px;
+            @include m-tablet-wide(){
+                width: 30px;
+                height: 30px;
+            }
+        }
+        span{
+            font-weight: 600;
+            font-size: 18px;
+        }
+    }
+    &__content {
+        font-weight: 500;
+        font-size: 14px;
+        @include m-laptop(){
+            font-size: 16px;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            tr{
+                td{
+                    width: 50%;
+                    padding: 5px 10px;
+                    padding-left: 5px;
+                    vertical-align: top;
+                    @include m-tablet-wide(){
+                        width: auto;
+                    }
+                    &:nth-child(2){
+                        opacity: 0.8;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__label {
+        border-top: 1px solid #262626;
+        margin-top: 15px;
+        padding: 15px 0 0;
+        position: relative;
+        padding-left: 40px;
+        font-size: 12px;
+        line-height: 1.5;
+        color: rgba($color: $color_white, $alpha: .5);
+    }
+    &__label-ico {
+        opacity: 0.3;
+        position: absolute;
+        top: 13px;
+        left: 0;
+        width: 26px;
+        @include m-tablet-wide(){
+            top: 15px;
+        }
+    }
+}

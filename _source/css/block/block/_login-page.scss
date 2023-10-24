@@ -1,0 +1,167 @@
+.login-page{
+    width: 100%;
+    max-width: 440px;
+    margin: 20px auto;
+    padding-bottom: 40px;
+    fieldset{
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .field{
+        text-align: left;
+        &:not(:last-child){
+            margin-bottom: 20px;
+        }
+        label{
+            font-size: 14px;
+        }
+        .text {
+            display: block;
+            border-radius: 0;
+            width: 100%;
+            font-size: 16px;
+            background: transparent;
+            padding: 0 15px;
+            font-weight: 500;
+            height: 60px;
+            outline: none;
+            border: none;
+            color: $color_white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-family: $font_base;
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            transition: $trsn;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        
+            &:focus{
+                background: #262626;
+                border-color: #262626;
+            }
+            &.error {
+                border-color: red;
+            }
+
+        }
+        &.checkbox{            
+            display: inline-block;
+            cursor: pointer;
+            margin: 8px 0;
+            user-select: none;
+            input{
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                &:checked ~label{
+                    &:before{
+                        border-color: $color_orange;
+                        background-color: $color_orange;
+                    }
+                    &:after{
+                        opacity: 1;
+                    }
+                }
+            }
+            label{
+                padding-left: 31px;
+                position: relative;
+                cursor: pointer;
+                &:before,
+                &:after{
+                    content: '';
+                    width: 16px;
+                    height: 16px;
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                    transition: $trsn;
+                }
+                &:before{          
+                    border: 1px solid #DFE1F0;
+                    border-radius: 2px;
+                }
+                &:after{
+                    background: url('../img/style/ico_checked.svg') no-repeat center center;
+                    background-size: 14px 14px;
+                    opacity: 0;
+                }
+                &:hover{
+                    &:before{
+                        border-color: $color_orange;
+                    }
+                }
+            }
+        }
+    }
+    form{
+    }
+    .btn-toolbar {
+    }
+    .action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: $color_dark-red;
+        padding: 15px;
+        min-height: 50px;
+        cursor: pointer;
+        border-radius: 0;
+        font-family: $font_base;
+        font-weight: 500;
+        border: none;
+        color: $color_white;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1;
+        transition: $trsn;
+        width: 100%;
+        margin-top: 15px;
+        svg{
+            width: 20px;
+            height: 20px;
+            margin-right: 14px;
+            fill: transparent;
+            stroke: currentColor;
+        }
+        &:hover{
+            background-color: $color_red;
+        }
+    }
+
+
+    .message {
+        &.bad{
+            background: #fb3c3c;
+            padding: 10px;
+            font-size: 13px;
+        }
+    }
+    .hidden {
+    }
+    .field {
+    }
+    .text {
+
+    }
+    .left {
+    }
+    .middleColumn {
+    }
+    .form-control {
+    }
+    .password {
+    }
+    .checkbox {
+    }
+    .right {
+    }
+    .clear {
+    }
+    
+}

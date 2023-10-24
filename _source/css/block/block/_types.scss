@@ -1,0 +1,100 @@
+.types {
+    padding: 30px 0;
+    background-color: rgba($color: #101010, $alpha: .9);
+    @include m-tablet(){
+        padding: 40px 0;
+    }
+    @include m-tablet-wide(){
+        padding: 60px 0;
+    }
+    @include m-laptop(){
+        padding: 100px 0;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        @include m-tablet-wide(){
+            margin-left: -40px;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        position: relative;
+        width: 100%;
+        @include m-tablet(){
+            align-items: center;
+        }
+        @include m-laptop(){
+            flex: 0 0 calc(50% - 40px);
+            max-width: calc(50% - 40px);
+            margin-left: 40px;
+            align-items: stretch;
+        }
+        &:not(:last-child){
+            margin-bottom: 30px;
+            @include m-laptop(){
+                margin-bottom: 0;
+            }
+        }
+        &:nth-child(2n){
+            @include m-laptop(){
+                margin-top: 60px;
+            }
+            @media screen and (min-width:1600px) {
+                margin-top: 120px;
+            }
+        }
+    }
+    &__image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include m-tablet(){
+            position: static;
+            flex: 0 0 33%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            @include m-laptop(){
+                max-height: initial;
+            }
+        }
+    }
+    &__content {
+        padding: 30px 20px;
+        background: rgba($color: #000000, $alpha: .7);
+        position: relative;
+        z-index: 2;
+        @include m-tablet(){
+            flex: 0 0 67%;
+            padding: 0 30px;
+            background: none;
+        }
+    }
+    &__title {
+        line-height: 1.3;
+        @include m-laptop(){
+            font-size: 36px;
+        }
+        @media screen and (min-width:1600px) {
+            font-size: 50px;
+        }
+    }
+    &__text {
+        font-size: 13px;
+        opacity: 0.9;
+        line-height: 1.7;
+        margin-top: 15px;
+        @media screen and (min-width:1600px) {
+            font-size: 16px;
+        }
+    }
+}

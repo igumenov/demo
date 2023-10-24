@@ -1,0 +1,31 @@
+.input-text {
+	display: block;
+	border-radius: 0;
+	width: 100%;
+	font-size: 16px;
+	background: transparent;
+	padding: 0 15px;
+	font-weight: 500;
+	height: 60px;
+	outline: none;
+	border: none;
+	color: $color_white;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	font-family: $font_base;
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
+	transition: $trsn;
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	&:focus{
+		background: #262626;
+		border-color: #262626;
+	}
+	&.error {
+		border-color: red;
+	}
+}

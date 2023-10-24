@@ -1,0 +1,18 @@
+.form{
+    &__item{
+        &:not(:last-child){
+            margin-bottom: 20px;
+        }
+        .input-checkbox{
+            display: block;
+        }
+    }
+    &__lbl{
+        font-size: 14px;
+        margin-bottom: 10px;
+        font-weight: 500;
+        @include m-tablet-wide(){
+            font-size: 18px;
+        }
+    }
+}

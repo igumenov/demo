@@ -1,0 +1,27 @@
+.select{
+	display: block;
+	cursor: pointer;
+	white-space: nowrap;
+	border-radius: 0;
+	width: 100%;
+	font-size: 16px;
+	background-color: transparent;
+	padding: 0 15px;
+	font-weight: 500;
+	padding-right: 46px;
+	outline: none;
+	border: none;
+	color: $color_text;
+	border: 1px solid #262626;
+	font-family: $font_base;
+    -webkit-appearance: none;
+    background-image: url('../img/style/ico_nav-dropdown.svg');
+    background-position: calc(100% - 20px) calc(1em + 2px),calc(100% - 15px) calc(1em + 2px);
+    background-size: 10px 10px,10px 10px;
+    background-repeat: no-repeat;
+	height: 44px;
+	@include m-tablet-wide(){
+		font-size: 16px;
+	}
+}
+

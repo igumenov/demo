@@ -1,0 +1,16 @@
+.rating {
+    display: flex;
+    &__star {
+        margin-right: 2px;
+        svg{
+            width: 12px;
+            height: 12px;
+            fill: #6C6C6C;
+        }
+        &.active{
+            svg{
+                fill: $color_orange;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+
+.breadcrumbs {
+    margin: 20px 0 0;
+    display: none;
+    @include m-tablet(){
+        display: block;
+    }
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__item {
+        display: inline-block;
+        color: rgba($color: $color_white, $alpha: .8);
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        &:not(:first-child){
+            &:before{
+                content: '>';
+                margin-right: 8px;
+                color: rgba($color: $color_white, $alpha: .8);
+            }
+        }
+        &:hover{
+            color: $color_white;
+            .breadcrumbs{
+                &__link {
+                    border-color: transparent;
+                }
+            }
+        }
+        
+    }
+    &__link {
+        border-bottom: 1px solid rgba($color: #C4C4C4, $alpha: .3);
+        padding-bottom: 3px;
+    }
+    &__name{
+        color: rgba($color: #919191, $alpha: .8);
+
+    }
+}

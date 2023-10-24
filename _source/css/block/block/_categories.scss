@@ -1,0 +1,155 @@
+.categories {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 30px 0 30px -10px;
+    @include m-laptop(){
+        margin-top: 70px;
+    }
+    &__item {
+        border: 2px solid transparent;
+        background-color: rgba($color: #101010, $alpha: .9);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @include m-phone-wide(){
+            flex: 0 0 calc(50% - 10px);
+            max-width: calc(50% - 10px);
+            margin-left: 10px;
+            margin-top: 10px;
+        }        
+        @include m-tablet-wide(){
+            flex: 0 0 calc(25% - 10px);
+            max-width: calc(25% - 10px);
+        }
+        &:hover{
+            border-color: $color_orange;
+        }
+        &:not(:last-child){
+            margin-bottom: 20px;
+            @include m-phone-wide(){
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__image {
+        position: relative;
+    }
+    &__image-wrap {
+        @include picture(73,cover);
+        &:before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(19.7deg, rgba(0, 0, 0, 0.8) 15.89%, rgba(0, 0, 0, 0) 41.26%);
+            z-index: 1;
+        }
+    }
+    &__name {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 1;
+        z-index: 2;
+        @include m-phone-wide(){
+            font-size: 24px;
+        }
+        @include m-tablet(){
+            font-size: 30px;
+        }
+        @include m-tablet-wide(){
+            font-size: 24px;
+        }
+        @include m-laptop(){
+            font-size: 30px;
+        }
+    }
+    &__content {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 1.7;
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+        @include m-phone-wide(){
+            font-size: 13px;
+        }
+        @include m-tablet(){
+            font-size: 14px;
+        }
+        @include m-tablet-wide(){
+            font-size: 13px;
+        }
+        @include m-laptop(){
+            font-size: 14px;
+        }
+    }
+    &__text {
+        margin-bottom: auto;
+    }
+    &__link {
+        margin-top: 15px;
+        color: #F34F4F;
+        text-transform: uppercase;
+        display: flex;
+        overflow: hidden;
+        span{
+            padding-right: 62px;
+            position: relative;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            @include m-phone-wide(){
+                padding-right: 0;
+            }
+            @include m-tablet(){
+                padding-right: 62px;
+            }
+            @include m-tablet-wide(){
+                padding-right: 0;
+            }
+            @include m-laptop(){
+                padding-right: 62px;
+                overflow: initial;
+            }
+            &:after{
+                content: '';
+                display: inline-block;
+                width: 47px;
+                height: 11px;
+                background: url('../img/style/ico_arrow_red.svg') no-repeat right center;
+                margin-left: 15px;
+                position: absolute;
+                right: 0;
+                bottom: 9px;
+                transition: $trsn;
+                @include m-phone-wide(){
+                    display: none;
+                }
+                @include m-tablet(){
+                    display: inline-block;
+                }
+                @include m-tablet-wide(){
+                    display: none;
+                }
+                @include m-laptop(){
+                    display: inline-block;
+                }
+            }
+        }
+        &:hover{
+            color: $color_orange;
+            span{
+                &:after{
+                    transform: translateX(100px);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

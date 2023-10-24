@@ -1,0 +1,11 @@
+.text{
+    font-size: 14px;
+    line-height: 1.6;
+    @include m-tablet-wide(){
+        font-size: 16px;
+    }
+    @include m-laptop(){
+        font-size: 18px;
+        line-height: 1.7;
+    }
+}

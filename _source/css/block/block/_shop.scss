@@ -1,0 +1,136 @@
+.shop {
+    &__list {
+        margin-top: 30px;
+        @include m-tablet(){
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            margin-left: -20px;
+        }
+    }
+    &__item {
+        display: flex;
+        background-color: rgba($color: #101010, $alpha: .9);
+        border: 1px solid #262626;
+        align-items: stretch;
+        flex-direction: column;
+        @include m-tablet(){
+            flex: 0 0 calc(50% - 20px);
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        @include m-laptop(){
+            flex: 0 0 calc(100% - 20px);
+            margin-left: 20px;
+            margin-bottom: 20px;
+            flex-direction: row;
+        }
+        &:not(:last-child){
+            margin-bottom: 30px;
+        }
+    }
+    &__image {
+        overflow: hidden;
+        @include m-laptop(){
+            flex: 0 0 200px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-height: 200px;
+            transition: $trsn;
+            @include m-laptop(){
+                max-height: 100%;
+            }
+        }
+        &:hover{
+            img{
+                transform: scale(1.05);
+            }
+        }
+
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        padding: 30px;
+        flex-direction: column;
+        @include m-laptop(){
+            flex-direction: row;
+            padding: 20px;
+            flex: 1 1 100%;
+            align-items: flex-start;
+        }
+    }
+    &__info {
+        @include m-laptop(){
+            flex: 1 1 100%;
+        }
+    }
+    &__name {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 30px;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        margin-bottom: 5px;
+        &:hover{
+            color: $color_orange;
+        }
+    }
+    &__rating {
+        margin: 0px 0 5px;
+    }
+    &__city {
+        color: #F34F4F;
+        opacity: 0.7;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    &__text {
+        margin-top: 15px;
+        line-height: 1.7;
+        font-size: 14px;
+        @include m-tablet-wide(){
+            font-size: 16px;
+        }
+        @include m-laptop(){
+            font-size: 14px;
+        }
+    }
+    &__contacts {
+        margin-top: 30px;
+        @include m-laptop(){
+            margin-left: 30px;
+            padding-left: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-left: 2px solid rgba($color: #fff, $alpha: .1);
+            width: 100%;
+        }
+        @include m-laptop(){
+            max-width: 400px;
+            width: 100%;
+        }
+    }
+    &__contact {
+        display: flex;
+        align-items: flex-start;
+        font-size: 14px;
+        &:not(:last-child){
+            margin-bottom: 15px;
+        }
+        img{
+            margin-right: 20px;
+        }
+        span{
+            padding-top: 2px;
+        }
+    }
+    a.shop__contact{
+        &:hover{
+            color: $color_orange;
+        }
+    }
+}
